@@ -21,6 +21,8 @@
 		DD0E2C5F157EC50900F3AAF9 /* tab_ar.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C59157EC50900F3AAF9 /* tab_ar.png */; };
 		DD0E2C60157EC50900F3AAF9 /* tab_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C5A157EC50900F3AAF9 /* tab_map@2x.png */; };
 		DD0E2C61157EC50900F3AAF9 /* tab_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C5B157EC50900F3AAF9 /* tab_list@2x.png */; };
+		DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2C69157EC95000F3AAF9 /* ARViewController.m */; };
+		DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		DD0E2C59157EC50900F3AAF9 /* tab_ar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_ar.png; sourceTree = "<group>"; };
 		DD0E2C5A157EC50900F3AAF9 /* tab_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_map@2x.png"; sourceTree = "<group>"; };
 		DD0E2C5B157EC50900F3AAF9 /* tab_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_list@2x.png"; sourceTree = "<group>"; };
+		DD0E2C68157EC95000F3AAF9 /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
+		DD0E2C69157EC95000F3AAF9 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
+		DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */,
 				DD0E2C2C157EC2B700F3AAF9 /* UIKit.framework in Frameworks */,
 				DD0E2C2E157EC2B700F3AAF9 /* Foundation.framework in Frameworks */,
 				DD0E2C30157EC2B700F3AAF9 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +84,7 @@
 		DD0E2C2A157EC2B700F3AAF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */,
 				DD0E2C2B157EC2B700F3AAF9 /* UIKit.framework */,
 				DD0E2C2D157EC2B700F3AAF9 /* Foundation.framework */,
 				DD0E2C2F157EC2B700F3AAF9 /* CoreGraphics.framework */,
@@ -93,6 +100,8 @@
 				DD0E2C3B157EC2B700F3AAF9 /* AppDelegate.m */,
 				DD0E2C3D157EC2B700F3AAF9 /* MainStoryboard_iPhone.storyboard */,
 				DD0E2C40157EC2B700F3AAF9 /* MainStoryboard_iPad.storyboard */,
+				DD0E2C68157EC95000F3AAF9 /* ARViewController.h */,
+				DD0E2C69157EC95000F3AAF9 /* ARViewController.m */,
 				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
 			);
 			path = "ar-project";
@@ -201,6 +210,7 @@
 			files = (
 				DD0E2C38157EC2B700F3AAF9 /* main.m in Sources */,
 				DD0E2C3C157EC2B700F3AAF9 /* AppDelegate.m in Sources */,
+				DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

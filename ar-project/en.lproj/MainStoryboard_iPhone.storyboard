@@ -46,13 +46,23 @@
         <scene sceneID="DZc-wI-l39">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlE-0I-w7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="JeL-Pu-3Vj" sceneMemberID="viewController">
+                <viewController id="JeL-Pu-3Vj" customClass="ARViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ynr-aU-T8j">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" id="o8v-I7-oT3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="PyH-fX-Qjm"/>
+                    <connections>
+                        <outlet property="cameraView" destination="o8v-I7-oT3" id="z0t-Cj-Dxb"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="847" y="-454"/>
@@ -93,6 +103,14 @@
         <image name="tab_list.png" width="20" height="14"/>
         <image name="tab_map.png" width="16" height="26"/>
     </resources>
+    <classes>
+        <class className="ARViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ARViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
