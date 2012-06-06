@@ -15,6 +15,8 @@
 @implementation ARViewController
 
 @synthesize cameraView = _cameraView;
+@synthesize imageView = _imageView;
+@synthesize slider = _slider;
 
 - (void)viewDidLoad
 {
@@ -49,6 +51,13 @@
 	previewLayer.frame = _cameraView.bounds;
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 	[[_cameraView layer] addSublayer:previewLayer];
+    
+    // Vertical Slider, rotates in the center
+    _slider.transform = CGAffineTransformRotate(_slider.transform, 270.0/180*M_PI);
+}
+
+-(IBAction) sliderChanged:(id)sender {
+    [_imageView setAlpha:_slider.value];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

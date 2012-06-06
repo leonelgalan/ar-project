@@ -12,9 +12,15 @@
 @interface ARViewController : UIViewController {
     AVCaptureSession *captureSession;
     UIView* cameraView;
+    UIImageView* imageView;
+    UISlider* slider;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *cameraView;
+@property (nonatomic, retain) IBOutlet UIImageView* imageView;
+@property (nonatomic, retain) IBOutlet UISlider* slider;
+
+-(IBAction) sliderChanged:(id)sender;
 
 - (void)initCamera;
 

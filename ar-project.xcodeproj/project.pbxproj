@@ -23,6 +23,7 @@
 		DD0E2C61157EC50900F3AAF9 /* tab_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C5B157EC50900F3AAF9 /* tab_list@2x.png */; };
 		DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2C69157EC95000F3AAF9 /* ARViewController.m */; };
 		DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */; };
+		DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		DD0E2C68157EC95000F3AAF9 /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
 		DD0E2C69157EC95000F3AAF9 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooks_hall_1936.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		DD0E2C62157EC51500F3AAF9 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				DD0E2C6D157ECB8800F3AAF9 /* sample images */,
 				DD0E2C63157EC51E00F3AAF9 /* icons */,
 			);
 			name = assets;
@@ -137,6 +140,14 @@
 				DD0E2C5B157EC50900F3AAF9 /* tab_list@2x.png */,
 			);
 			name = icons;
+			sourceTree = "<group>";
+		};
+		DD0E2C6D157ECB8800F3AAF9 /* sample images */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */,
+			);
+			name = "sample images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 				DD0E2C5F157EC50900F3AAF9 /* tab_ar.png in Resources */,
 				DD0E2C60157EC50900F3AAF9 /* tab_map@2x.png in Resources */,
 				DD0E2C61157EC50900F3AAF9 /* tab_list@2x.png in Resources */,
+				DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
