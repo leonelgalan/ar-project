@@ -24,6 +24,7 @@
 		DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2C69157EC95000F3AAF9 /* ARViewController.m */; };
 		DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */; };
 		DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */; };
+		DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD847AD9157FD2C100855FEA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		DD0E2C69157EC95000F3AAF9 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooks_hall_1936.jpg; sourceTree = "<group>"; };
+		DD847AD9157FD2C100855FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */,
 				DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */,
 				DD0E2C2C157EC2B700F3AAF9 /* UIKit.framework in Frameworks */,
 				DD0E2C2E157EC2B700F3AAF9 /* Foundation.framework in Frameworks */,
@@ -86,6 +89,7 @@
 		DD0E2C2A157EC2B700F3AAF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD847AD9157FD2C100855FEA /* CoreLocation.framework */,
 				DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */,
 				DD0E2C2B157EC2B700F3AAF9 /* UIKit.framework */,
 				DD0E2C2D157EC2B700F3AAF9 /* Foundation.framework */,
@@ -344,6 +348,7 @@
 				DD0E2C55157EC2B700F3AAF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

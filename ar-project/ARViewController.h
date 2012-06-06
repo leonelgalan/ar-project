@@ -7,18 +7,23 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
-@interface ARViewController : UIViewController {
+@interface ARViewController : UIViewController <CLLocationManagerDelegate> {
     AVCaptureSession *captureSession;
     UIView* cameraView;
     UIImageView* imageView;
     UISlider* slider;
+    
+    CLLocationManager *locationManager;
+    UITextView *locationTextView;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *cameraView;
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 @property (nonatomic, retain) IBOutlet UISlider* slider;
+@property (nonatomic, retain) IBOutlet UITextView *locationTextView;
 
 -(IBAction) sliderChanged:(id)sender;
 
