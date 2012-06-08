@@ -10,6 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
+#import "CLLocation+HeadingFromLocation.h"
+
 @interface ARViewController : UIViewController <CLLocationManagerDelegate> {
     AVCaptureSession *captureSession;
     UIView* cameraView;
