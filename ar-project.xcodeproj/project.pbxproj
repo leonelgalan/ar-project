@@ -24,6 +24,7 @@
 		DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2C69157EC95000F3AAF9 /* ARViewController.m */; };
 		DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */; };
 		DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */; };
+		DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */; };
 		DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD847AD9157FD2C100855FEA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		DD0E2C69157EC95000F3AAF9 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooks_hall_1936.jpg; sourceTree = "<group>"; };
+		DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+HeadingFromLocation.h"; sourceTree = "<group>"; };
+		DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+HeadingFromLocation.m"; sourceTree = "<group>"; };
 		DD847AD9157FD2C100855FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,8 @@
 				DD0E2C68157EC95000F3AAF9 /* ARViewController.h */,
 				DD0E2C69157EC95000F3AAF9 /* ARViewController.m */,
 				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
+				DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */,
+				DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */,
 			);
 			path = "ar-project";
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				DD0E2C38157EC2B700F3AAF9 /* main.m in Sources */,
 				DD0E2C3C157EC2B700F3AAF9 /* AppDelegate.m in Sources */,
 				DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */,
+				DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

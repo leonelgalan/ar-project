@@ -19,13 +19,15 @@
     UISlider* slider;
     
     CLLocationManager *locationManager;
-    UITextView *locationTextView;
+    UILabel *headingLabel;
+    UILabel *bearingLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *cameraView;
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 @property (nonatomic, retain) IBOutlet UISlider* slider;
-@property (nonatomic, retain) IBOutlet UITextView *locationTextView;
+@property (nonatomic, retain) IBOutlet UILabel *headingLabel;
+@property (nonatomic, retain) IBOutlet UILabel *bearingLabel;
 
 -(IBAction) sliderChanged:(id)sender;
 

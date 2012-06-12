@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2541" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1875"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
@@ -23,13 +21,13 @@
                         <segue destination="AEF-XA-9rq" kind="relationship" relationship="viewControllers" id="AlX-7b-0Mp"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-184" y="296"/>
         </scene>
         <!--Navigation Controller - AR-->
         <scene sceneID="Jk9-pO-1ZR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6gx-nk-dbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="3yQ-wH-6vc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="AR" image="tab_ar.png" id="nx4-j1-icm"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rvv-X5-zB2">
@@ -39,13 +37,13 @@
                         <segue destination="JeL-Pu-3Vj" kind="relationship" relationship="rootViewController" id="hAd-Mp-sOT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gx-nk-dbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="370" y="-454"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DZc-wI-l39">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VlE-0I-w7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="JeL-Pu-3Vj" customClass="ARViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ynr-aU-T8j">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -78,13 +76,13 @@
                         <outlet property="slider" destination="iEv-9P-BLW" id="Uxy-nQ-bvO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VlE-0I-w7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="847" y="-454"/>
         </scene>
         <!--View Controller - Map-->
         <scene sceneID="Vfh-5H-Lt9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dO3-hr-9wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jf7-tA-075" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BYt-z6-KPb">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -93,13 +91,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="tab_map.png" id="Yt7-dl-OUM"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dO3-hr-9wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="847" y="296"/>
         </scene>
         <!--View Controller - List-->
         <scene sceneID="z3L-bW-R0F">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7rD-oU-R9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="AEF-XA-9rq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Lc-0h-ugF">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -108,6 +106,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="tab_list.png" id="Jpa-T2-MBz"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7rD-oU-R9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="847" y="1002"/>
         </scene>

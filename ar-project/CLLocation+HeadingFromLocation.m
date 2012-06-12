@@ -10,14 +10,20 @@
 
 @implementation CLLocation (HeadingFromLocation)
 
-// http://stackoverflow.com/questions/3809337/calculating-bearing-between-two-cllocationcoordinate2ds 
+// http://stackoverflow.com/questions/3809337/calculating-bearing-between-two-cllocationcoordinate2ds + Replies
 - (float)bearingFromLocation:(const CLLocation *)location {
     float fLat = degreesToRadians(self.coordinate.latitude);
     float fLng = degreesToRadians(self.coordinate.longitude);
     float tLat = degreesToRadians(location.coordinate.latitude);
     float tLng = degreesToRadians(location.coordinate.longitude);
     
-    return radiansToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)));    
+    float bearing = radiansToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)));
+    
+    if (bearing < 0) {
+        bearing = 360.0 + bearing;
+    }
+    
+    return bearing;
 }
 
 @end

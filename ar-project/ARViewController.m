@@ -17,7 +17,8 @@
 @synthesize cameraView = _cameraView;
 @synthesize imageView = _imageView;
 @synthesize slider = _slider;
-@synthesize locationTextView = _locationTextView;
+@synthesize headingLabel = _headingLabel;
+@synthesize bearingLabel = _bearingLabel;
 
 - (void)viewDidLoad
 {
@@ -94,12 +95,14 @@
     NSLog(@"IPAD: latitude %+.6f, longitude %+.6f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     NSLog(@"Distance: %lf", distance);
     NSLog(@"Bearing: %+.6f DEG", bearing);
+    [_bearingLabel setText:[NSString stringWithFormat:@"%+.0f°", bearing]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     if (newHeading.headingAccuracy > 0) {
         NSLog(@"%@", [NSString stringWithFormat:@"Magnetic Heading: %f", newHeading.magneticHeading]);
         NSLog(@"%@", [NSString stringWithFormat:@"True Heading: %f", newHeading.trueHeading]);
+        [_headingLabel setText:[NSString stringWithFormat:@"%+.0f°", newHeading]];
     }
 }
 

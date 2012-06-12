@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2541" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1875"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - AR-->
         <scene sceneID="YpI-a4-mgg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zIl-7o-Urv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="qHI-Uz-ahh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="AR" image="tab_ar.png" id="Vf1-58-Lhn"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pWl-Q6-8sn">
@@ -19,13 +17,13 @@
                         <segue destination="dCJ-wZ-CwT" kind="relationship" relationship="rootViewController" id="FGB-lq-QZn"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIl-7o-Urv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2201" y="-1163"/>
         </scene>
         <!--View Controller - Map-->
         <scene sceneID="11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <viewController id="2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
@@ -41,13 +39,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="tab_map.png" id="7"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3221" y="14"/>
         </scene>
         <!--View Controller - List-->
         <scene sceneID="ICy-1r-oOs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fqc-R2-UkZ" sceneMemberID="firstResponder"/>
                 <viewController id="I8H-Mo-yxW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ve-2E-XJl">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
@@ -63,13 +61,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="tab_list.png" id="EFv-zb-L9P"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fqc-R2-UkZ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3221" y="1198"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
@@ -83,13 +81,13 @@
                         <segue destination="I8H-Mo-yxW" kind="relationship" relationship="viewControllers" id="gRp-kx-Lhx"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="14"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fwb-wt-oxe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Iy-8q-qnW" sceneMemberID="firstResponder"/>
                 <viewController id="dCJ-wZ-CwT" customClass="ARViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lFz-VJ-KHU">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
@@ -111,24 +109,51 @@
                                     <action selector="sliderChanged:" destination="dCJ-wZ-CwT" eventType="valueChanged" id="l9M-a1-tmt"/>
                                 </connections>
                             </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="qTF-jy-bCv">
-                                <rect key="frame" x="264" y="763" width="240" height="128"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="+000°" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="agh-b4-2Tu">
+                                <rect key="frame" x="442" y="858" width="80" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="+000°" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="kND-7S-iIl">
+                                <rect key="frame" x="530" y="858" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="EIH-rv-MDx">
+                                <rect key="frame" x="607" y="10" width="151" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="BdN-b4-5yC">
+                                        <rect key="frame" x="70" y="70" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="4gC-Bx-ROS">
+                                        <rect key="frame" x="80" y="80" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Brx-jL-P0c"/>
                     <navigationItem key="navigationItem" id="M19-en-RE3"/>
                     <connections>
+                        <outlet property="bearingLabel" destination="kND-7S-iIl" id="FuQ-6X-Yv7"/>
                         <outlet property="cameraView" destination="ITU-CJ-xQc" id="d97-rQ-kXd"/>
+                        <outlet property="headingLabel" destination="agh-b4-2Tu" id="pC3-IZ-xs6"/>
                         <outlet property="imageView" destination="MQg-Rn-Cqq" id="FOd-f2-IkR"/>
-                        <outlet property="locationTextView" destination="qTF-jy-bCv" id="P40-3b-P2Y"/>
                         <outlet property="slider" destination="xJr-pD-1ih" id="Qpz-JU-uJ1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Iy-8q-qnW" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3221" y="-1163"/>
         </scene>
@@ -139,6 +164,19 @@
         <image name="tab_list.png" width="20" height="14"/>
         <image name="tab_map.png" width="16" height="26"/>
     </resources>
+    <classes>
+        <class className="ARViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ARViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderChanged:"/>
+                <relationship kind="outlet" name="bearingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="headingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
