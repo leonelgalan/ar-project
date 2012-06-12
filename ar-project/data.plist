@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>1</key>
+	<dict>
+		<key>title</key>
+		<string>Brooks Hall</string>
+		<key>description</key>
+		<string>College of Design</string>
+		<key>longitude</key>
+		<real>-78.665167</real>
+		<key>latitude</key>
+		<real>35.784289</real>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>title</key>
+		<string>Bell Tower</string>
+		<key>description</key>
+		<string>North Carolina State</string>
+		<key>longitude</key>
+		<real>-78.665167</real>
+		<key>latitude</key>
+		<real>35.784289</real>
+	</dict>
+</dict>
 </plist>

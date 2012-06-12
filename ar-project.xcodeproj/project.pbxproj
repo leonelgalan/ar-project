@@ -26,6 +26,7 @@
 		DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */; };
 		DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */; };
 		DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD847AD9157FD2C100855FEA /* CoreLocation.framework */; };
+		DDAC61971587BB2300D2E484 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDAC61961587BB2300D2E484 /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+HeadingFromLocation.h"; sourceTree = "<group>"; };
 		DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+HeadingFromLocation.m"; sourceTree = "<group>"; };
 		DD847AD9157FD2C100855FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DDAC61961587BB2300D2E484 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				DD0E2C6D157ECB8800F3AAF9 /* sample images */,
 				DD0E2C63157EC51E00F3AAF9 /* icons */,
+				DDAC61961587BB2300D2E484 /* data.plist */,
 			);
 			name = assets;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				DD0E2C60157EC50900F3AAF9 /* tab_map@2x.png in Resources */,
 				DD0E2C61157EC50900F3AAF9 /* tab_list@2x.png in Resources */,
 				DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */,
+				DDAC61971587BB2300D2E484 /* data.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
