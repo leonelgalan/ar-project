@@ -27,6 +27,8 @@
 		DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */; };
 		DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD847AD9157FD2C100855FEA /* CoreLocation.framework */; };
 		DDAC61971587BB2300D2E484 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDAC61961587BB2300D2E484 /* data.plist */; };
+		DDAC619B1587C02600D2E484 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAC619A1587C02600D2E484 /* MapViewController.m */; };
+		DDD116FB1587C3F900490B53 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD116FA1587C3F900490B53 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,9 @@
 		DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+HeadingFromLocation.m"; sourceTree = "<group>"; };
 		DD847AD9157FD2C100855FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DDAC61961587BB2300D2E484 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		DDAC61991587C02600D2E484 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		DDAC619A1587C02600D2E484 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		DDD116FA1587C3F900490B53 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD116FB1587C3F900490B53 /* MapKit.framework in Frameworks */,
 				DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */,
 				DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */,
 				DD0E2C2C157EC2B700F3AAF9 /* UIKit.framework in Frameworks */,
@@ -94,6 +100,7 @@
 		DD0E2C2A157EC2B700F3AAF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDD116FA1587C3F900490B53 /* MapKit.framework */,
 				DD847AD9157FD2C100855FEA /* CoreLocation.framework */,
 				DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */,
 				DD0E2C2B157EC2B700F3AAF9 /* UIKit.framework */,
@@ -116,6 +123,8 @@
 				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
 				DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */,
 				DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */,
+				DDAC61991587C02600D2E484 /* MapViewController.h */,
+				DDAC619A1587C02600D2E484 /* MapViewController.m */,
 			);
 			path = "ar-project";
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 				DD0E2C3C157EC2B700F3AAF9 /* AppDelegate.m in Sources */,
 				DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */,
 				DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */,
+				DDAC619B1587C02600D2E484 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

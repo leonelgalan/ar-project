@@ -21,6 +21,14 @@
     CLLocationManager *locationManager;
     UILabel *headingLabel;
     UILabel *bearingLabel;
+    
+    CLLocation *location;
+    CLHeading *heading;
+    
+    UIView *point0;
+    UIView *point1;
+    UIView *point2;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UIView *cameraView;
@@ -28,6 +36,9 @@
 @property (nonatomic, retain) IBOutlet UISlider* slider;
 @property (nonatomic, retain) IBOutlet UILabel *headingLabel;
 @property (nonatomic, retain) IBOutlet UILabel *bearingLabel;
+@property (nonatomic, retain) IBOutlet UIView *point0;
+@property (nonatomic, retain) IBOutlet UIView *point1;
+@property (nonatomic, retain) IBOutlet UIView *point2;
 
 -(IBAction) sliderChanged:(id)sender;
 
