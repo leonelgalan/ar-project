@@ -28,10 +28,8 @@
     
     // Temporary
     UILabel *headingLabel;
-    UILabel *bearingLabel;
+    UILabel *coordinatesLabel;
     UIView *point0;
-    UIView *point1;
-    UIView *point2;
     
 }
 
@@ -40,17 +38,16 @@
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) IBOutlet UISlider *slider;
 
-@property (nonatomic, retain) IBOutlet CLLocation *location;
-@property (nonatomic, retain) IBOutlet CLHeading *heading;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, retain) CLHeading *heading;
 
 // Temporary
 @property (nonatomic, retain) IBOutlet UILabel *headingLabel;
-@property (nonatomic, retain) IBOutlet UILabel *bearingLabel;
+@property (nonatomic, retain) IBOutlet UILabel *coordinatesLabel;
 @property (nonatomic, retain) IBOutlet UIView *point0;
-@property (nonatomic, retain) IBOutlet UIView *point1;
-@property (nonatomic, retain) IBOutlet UIView *point2;
 
 -(IBAction) sliderChanged:(id)sender;
+-(IBAction) captureView:(id)sender;
 
 - (void)initCamera;
 
