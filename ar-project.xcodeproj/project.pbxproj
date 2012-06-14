@@ -24,6 +24,7 @@
 		DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2C69157EC95000F3AAF9 /* ARViewController.m */; };
 		DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */; };
 		DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */; };
+		DD34EA2115894FFC00740B4C /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = DD34EA2015894FFC00740B4C /* Picture.m */; };
 		DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */; };
 		DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD847AD9157FD2C100855FEA /* CoreLocation.framework */; };
 		DDAC61971587BB2300D2E484 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDAC61961587BB2300D2E484 /* data.plist */; };
@@ -54,6 +55,8 @@
 		DD0E2C69157EC95000F3AAF9 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooks_hall_1936.jpg; sourceTree = "<group>"; };
+		DD34EA1F15894FFC00740B4C /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		DD34EA2015894FFC00740B4C /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+HeadingFromLocation.h"; sourceTree = "<group>"; };
 		DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+HeadingFromLocation.m"; sourceTree = "<group>"; };
 		DD847AD9157FD2C100855FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -116,15 +119,17 @@
 				DD0E2C62157EC51500F3AAF9 /* assets */,
 				DD0E2C3A157EC2B700F3AAF9 /* AppDelegate.h */,
 				DD0E2C3B157EC2B700F3AAF9 /* AppDelegate.m */,
+				DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */,
+				DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */,
 				DD0E2C3D157EC2B700F3AAF9 /* MainStoryboard_iPhone.storyboard */,
 				DD0E2C40157EC2B700F3AAF9 /* MainStoryboard_iPad.storyboard */,
 				DD0E2C68157EC95000F3AAF9 /* ARViewController.h */,
 				DD0E2C69157EC95000F3AAF9 /* ARViewController.m */,
-				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
-				DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */,
-				DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */,
 				DDAC61991587C02600D2E484 /* MapViewController.h */,
 				DDAC619A1587C02600D2E484 /* MapViewController.m */,
+				DD34EA1F15894FFC00740B4C /* Picture.h */,
+				DD34EA2015894FFC00740B4C /* Picture.m */,
+				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
 			);
 			path = "ar-project";
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */,
 				DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */,
 				DDAC619B1587C02600D2E484 /* MapViewController.m in Sources */,
+				DD34EA2115894FFC00740B4C /* Picture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

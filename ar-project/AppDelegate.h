@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CLLocation+HeadingFromLocation.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     NSDictionary *data;
 }
