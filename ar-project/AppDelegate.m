@@ -3,6 +3,7 @@
 //  ar-project
 //
 //  Created by Leonel Galan on 6/5/12.
+//  Modified by Fadi Qassem
 //  Copyright (c) 2012 NCSU. All rights reserved.
 //
 
@@ -12,39 +13,51 @@
 
 @synthesize window = _window;
 @synthesize data = _data;
+@synthesize facebook;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    facebook = [[Facebook alloc] initWithAppId:@"351841488223055" andDelegate:self];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] 
+        && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+
+        //check for valid session
+    if (![facebook isSessionValid]) {
+        NSArray *permissions = [[NSArray alloc] initWithObjects:
+                                @"user_likes", 
+                                @"read_stream",
+                                nil];
+        [facebook authorize:permissions];    
+        [facebook authorize:nil];
+    }
+
+
     _data = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"]];
-    
     return YES;
+    
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    // Pre iOS 4.2 support
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [facebook handleOpenURL:url];    
 }
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    // For iOS 4.2+ support
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [facebook handleOpenURL:url]; 
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (void)fbDidLogin {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    
 }
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
 @end
+

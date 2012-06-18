@@ -1,0 +1,24 @@
+//
+//  Picture.m
+//  ar-project
+//
+//  Created by Leonel Galan on 6/13/12.
+//  Copyright (c) 2012 NCSU. All rights reserved.
+//
+
+#import "Picture.h"
+
+@implementation Picture
+
+@synthesize location = _location;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary {
+    if (self = [super init]) {
+        self.location = [[CLLocation alloc] 
+                            initWithLatitude:[((NSNumber *)[dictionary objectForKey:@"latitude"]) doubleValue]
+                            longitude:[((NSNumber *)[dictionary objectForKey:@"longitude"]) doubleValue]];
+    }
+    return self;
+}
+
+@end

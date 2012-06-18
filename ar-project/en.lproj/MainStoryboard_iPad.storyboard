@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2541" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1875"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - AR-->
@@ -21,12 +21,28 @@
             </objects>
             <point key="canvasLocation" x="2201" y="-1163"/>
         </scene>
+        <!--Navigation Controller - List-->
+        <scene sceneID="jAC-xj-6yl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9I-3i-vFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="dpl-Ck-iOu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="tab_list.png" id="0jV-8A-5Lv"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="UDS-UQ-hiy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="jPe-jh-ftw"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2201" y="14"/>
+        </scene>
         <!--View Controller - Map-->
         <scene sceneID="11">
             <objects>
                 <viewController id="2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="20">
@@ -38,6 +54,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="tab_map.png" id="7"/>
+                    <navigationItem key="navigationItem" id="6NN-bn-F65"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,6 +77,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="tab_list.png" id="EFv-zb-L9P"/>
+                    <navigationItem key="navigationItem" id="QRm-m3-bTF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqc-R2-UkZ" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,8 +95,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="qHI-Uz-ahh" kind="relationship" relationship="viewControllers" id="O2R-Lz-cix"/>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="g0G-2j-u7w"/>
                         <segue destination="I8H-Mo-yxW" kind="relationship" relationship="viewControllers" id="gRp-kx-Lhx"/>
+                        <segue destination="dpl-Ck-iOu" kind="relationship" relationship="viewControllers" id="UQo-UT-FCx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -96,12 +114,113 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" id="ITU-CJ-xQc">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.60000000000000009" contentMode="scaleAspectFit" image="brooks_hall_1936.jpg" id="MQg-Rn-Cqq">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                             </view>
-                            <imageView userInteractionEnabled="NO" alpha="0.60000000000000009" contentMode="scaleAspectFit" image="brooks_hall_1936.jpg" id="MQg-Rn-Cqq">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" id="7qi-Cz-arD">
+                                <rect key="frame" x="-90" y="375" width="187" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="9d9-30-0rm" customClass="SlideMenu">
+                                        <rect key="frame" x="-9" y="0.0" width="151" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NVC-vR-dX0">
+                                                <rect key="frame" x="27" y="76" width="72" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Map">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="9d9-30-0rm" eventType="touchUpInside" id="I8K-wB-EIR"/>
+                                                    <segue destination="2" kind="custom" id="p2w-Yq-Q7p"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u8a-6Y-fTT">
+                                                <rect key="frame" x="27" y="20" width="72" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="List">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="9d9-30-0rm" eventType="touchUpInside" id="90e-JN-z8T"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AsR-zQ-MTK">
+                                                <rect key="frame" x="137" y="0.0" width="33" height="152"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="listNav" destination="u8a-6Y-fTT" id="JfB-4g-WpC"/>
+                                            <outlet property="mapNav" destination="NVC-vR-dX0" id="VqA-l8-W8a"/>
+                                            <outlet property="menuView" destination="7qi-Cz-arD" id="sgJ-sh-RIR"/>
+                                            <outlet property="swipeLeft" destination="eqa-xg-4TX" id="v3s-b0-Cl4"/>
+                                            <outlet property="swipeRight" destination="qTG-2M-M8z" id="A5D-48-cfY"/>
+                                            <outlet property="tapMenu" destination="VZt-Wp-kTM" id="JOX-rt-g5G"/>
+                                            <outletCollection property="gestureRecognizers" destination="qTG-2M-M8z" id="dMH-ze-ssd"/>
+                                            <outletCollection property="gestureRecognizers" destination="eqa-xg-4TX" id="vQL-1h-CdC"/>
+                                            <outletCollection property="gestureRecognizers" destination="VZt-Wp-kTM" id="apv-27-pxj"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <view alpha="0.50000000000000011" contentMode="scaleToFill" id="EIH-rv-MDx">
+                                <rect key="frame" x="607" y="10" width="151" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view alpha="0.50000000000000011" contentMode="scaleToFill" id="BdN-b4-5yC">
+                                        <rect key="frame" x="70" y="70" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="+000°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="agh-b4-2Tu">
+                                <rect key="frame" x="447" y="20" width="157" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00.00000, 00.00000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yQd-Mi-c8C">
+                                <rect key="frame" x="20" y="20" width="419" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="xJr-pD-1ih">
                                 <rect key="frame" x="569" y="235" width="333" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,61 +228,56 @@
                                     <action selector="sliderChanged:" destination="dCJ-wZ-CwT" eventType="valueChanged" id="l9M-a1-tmt"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="+000°" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="agh-b4-2Tu">
-                                <rect key="frame" x="300" y="20" width="157" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3sC-Tw-Met">
+                                <rect key="frame" x="683" y="418" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="highlightedColor"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="+000°" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="kND-7S-iIl">
-                                <rect key="frame" x="450" y="20" width="148" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="highlightedColor"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                            </label>
-                            <view contentMode="scaleToFill" id="EIH-rv-MDx">
-                                <rect key="frame" x="607" y="10" width="151" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="BdN-b4-5yC">
-                                        <rect key="frame" x="70" y="70" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="4gC-Bx-ROS">
-                                        <rect key="frame" x="80" y="80" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="BiZ-aH-Txh">
-                                        <rect key="frame" x="90" y="90" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="captureView:" destination="dCJ-wZ-CwT" eventType="touchUpInside" id="9MK-yD-RIO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Brx-jL-P0c"/>
                     <navigationItem key="navigationItem" id="M19-en-RE3"/>
                     <connections>
-                        <outlet property="bearingLabel" destination="kND-7S-iIl" id="FuQ-6X-Yv7"/>
                         <outlet property="cameraView" destination="ITU-CJ-xQc" id="d97-rQ-kXd"/>
+                        <outlet property="coordinatesLabel" destination="yQd-Mi-c8C" id="clm-Zf-hpA"/>
                         <outlet property="headingLabel" destination="agh-b4-2Tu" id="pC3-IZ-xs6"/>
                         <outlet property="imageView" destination="MQg-Rn-Cqq" id="FOd-f2-IkR"/>
                         <outlet property="point0" destination="BdN-b4-5yC" id="VhK-Uw-nV2"/>
-                        <outlet property="point1" destination="4gC-Bx-ROS" id="cwj-N3-qGP"/>
-                        <outlet property="point2" destination="BiZ-aH-Txh" id="XV2-WS-tbE"/>
+                        <outlet property="radarView" destination="EIH-rv-MDx" id="hIQ-JP-fmj"/>
+                        <outlet property="slideMenu" destination="9d9-30-0rm" id="coW-LO-vbv"/>
                         <outlet property="slider" destination="xJr-pD-1ih" id="Qpz-JU-uJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Iy-8q-qnW" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VZt-Wp-kTM">
+                    <connections>
+                        <action selector="handleMenu:" destination="9d9-30-0rm" id="kJ7-fg-FxC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="qTG-2M-M8z" userLabel="SwipeRight">
+                    <connections>
+                        <action selector="handleMenu:" destination="9d9-30-0rm" id="BfB-1N-HXr"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="eqa-xg-4TX" userLabel="SwipeLeft">
+                    <connections>
+                        <action selector="handleMenu:" destination="9d9-30-0rm" id="yDu-rg-1GP"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3221" y="-1163"/>
+            <point key="canvasLocation" x="3211" y="-1147"/>
         </scene>
     </scenes>
     <resources>
@@ -172,25 +286,12 @@
         <image name="tab_list.png" width="20" height="14"/>
         <image name="tab_map.png" width="16" height="26"/>
     </resources>
-    <classes>
-        <class className="ARViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ARViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderChanged:"/>
-                <relationship kind="outlet" name="bearingLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="headingLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="point0" candidateClass="UIView"/>
-                <relationship kind="outlet" name="point1" candidateClass="UIView"/>
-                <relationship kind="outlet" name="point2" candidateClass="UIView"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="p2w-Yq-Q7p"/>
+    </inferredMetricsTieBreakers>
 </document>

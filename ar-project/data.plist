@@ -9,9 +9,9 @@
 		<key>description</key>
 		<string>College of Design</string>
 		<key>longitude</key>
-		<real>-78.665167</real>
+		<real>-78.66448</real>
 		<key>latitude</key>
-		<real>35.784289</real>
+		<real>35.78461</real>
 	</dict>
 	<key>2</key>
 	<dict>
@@ -20,9 +20,9 @@
 		<key>description</key>
 		<string>North Carolina State</string>
 		<key>longitude</key>
-		<real>-78.665167</real>
+		<real>-78.66348000000001</real>
 		<key>latitude</key>
-		<real>35.784289</real>
+		<real>35.78612</real>
 	</dict>
 </dict>
 </plist>

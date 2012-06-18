@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+#import "CLLocation+HeadingFromLocation.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate> {
     NSDictionary *data;
+    Facebook* facebook;
 }
+
+
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSDictionary *data;
+@property (nonatomic, retain) Facebook* facebook;
 
 @end
+
