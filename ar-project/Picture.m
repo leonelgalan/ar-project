@@ -10,11 +10,15 @@
 
 @implementation Picture
 
+@synthesize title = _title;
+@synthesize description = _description;
 @synthesize location = _location;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init]) {
-        self.location = [[CLLocation alloc] 
+        _title = [dictionary objectForKey:@"title"];
+        _description= [dictionary objectForKey:@"description"];
+        _location = [[CLLocation alloc] 
                             initWithLatitude:[((NSNumber *)[dictionary objectForKey:@"latitude"]) doubleValue]
                             longitude:[((NSNumber *)[dictionary objectForKey:@"longitude"]) doubleValue]];
     }

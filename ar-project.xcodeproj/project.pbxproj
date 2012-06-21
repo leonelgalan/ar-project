@@ -24,6 +24,13 @@
 		DD0E2C6A157EC95000F3AAF9 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2C69157EC95000F3AAF9 /* ARViewController.m */; };
 		DD0E2C6C157ECA1900F3AAF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */; };
 		DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */; };
+		DD311512158FB807000DE66A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD311511158FB807000DE66A /* icon.png */; };
+		DD311515158FB809000DE66A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD311514158FB809000DE66A /* icon@2x.png */; };
+		DD311517158FB93F000DE66A /* appicon(ipadlowres).png in Resources */ = {isa = PBXBuildFile; fileRef = DD311516158FB93F000DE66A /* appicon(ipadlowres).png */; };
+		DD311519158FB941000DE66A /* appicon(ipadhighres).png in Resources */ = {isa = PBXBuildFile; fileRef = DD311518158FB941000DE66A /* appicon(ipadhighres).png */; };
+		DD3115381593509B000DE66A /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3115371593509B000DE66A /* MapAnnotation.m */; };
+		DD31153D15936281000DE66A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD31153C15936281000DE66A /* ListViewController.m */; };
+		DD3115401593787B000DE66A /* UISlider+BiggerThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = DD31153F1593787B000DE66A /* UISlider+BiggerThumb.m */; };
 		DD34EA2115894FFC00740B4C /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = DD34EA2015894FFC00740B4C /* Picture.m */; };
 		DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */; };
 		DD847ADA157FD2C100855FEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD847AD9157FD2C100855FEA /* CoreLocation.framework */; };
@@ -55,6 +62,17 @@
 		DD0E2C69157EC95000F3AAF9 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		DD0E2C6B157ECA1900F3AAF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD0E2C6E157ECBB200F3AAF9 /* brooks_hall_1936.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooks_hall_1936.jpg; sourceTree = "<group>"; };
+		DD311511158FB807000DE66A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		DD311514158FB809000DE66A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		DD311516158FB93F000DE66A /* appicon(ipadlowres).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon(ipadlowres).png"; sourceTree = "<group>"; };
+		DD311518158FB941000DE66A /* appicon(ipadhighres).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon(ipadhighres).png"; sourceTree = "<group>"; };
+		DD3115361593509B000DE66A /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		DD3115371593509B000DE66A /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		DD31153A15935540000DE66A /* Raleigh.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Raleigh.gpx; sourceTree = "<group>"; };
+		DD31153B15936281000DE66A /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		DD31153C15936281000DE66A /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		DD31153E1593787A000DE66A /* UISlider+BiggerThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+BiggerThumb.h"; sourceTree = "<group>"; };
+		DD31153F1593787B000DE66A /* UISlider+BiggerThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+BiggerThumb.m"; sourceTree = "<group>"; };
 		DD34EA1F15894FFC00740B4C /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		DD34EA2015894FFC00740B4C /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+HeadingFromLocation.h"; sourceTree = "<group>"; };
@@ -86,6 +104,11 @@
 		DD0E2C1C157EC2B600F3AAF9 = {
 			isa = PBXGroup;
 			children = (
+				DD31153A15935540000DE66A /* Raleigh.gpx */,
+				DD311518158FB941000DE66A /* appicon(ipadhighres).png */,
+				DD311516158FB93F000DE66A /* appicon(ipadlowres).png */,
+				DD311514158FB809000DE66A /* icon@2x.png */,
+				DD311511158FB807000DE66A /* icon.png */,
 				DD0E2C31157EC2B700F3AAF9 /* ar-project */,
 				DD0E2C2A157EC2B700F3AAF9 /* Frameworks */,
 				DD0E2C28157EC2B700F3AAF9 /* Products */,
@@ -119,17 +142,23 @@
 				DD0E2C62157EC51500F3AAF9 /* assets */,
 				DD0E2C3A157EC2B700F3AAF9 /* AppDelegate.h */,
 				DD0E2C3B157EC2B700F3AAF9 /* AppDelegate.m */,
-				DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */,
-				DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */,
 				DD0E2C3D157EC2B700F3AAF9 /* MainStoryboard_iPhone.storyboard */,
 				DD0E2C40157EC2B700F3AAF9 /* MainStoryboard_iPad.storyboard */,
 				DD0E2C68157EC95000F3AAF9 /* ARViewController.h */,
 				DD0E2C69157EC95000F3AAF9 /* ARViewController.m */,
 				DDAC61991587C02600D2E484 /* MapViewController.h */,
 				DDAC619A1587C02600D2E484 /* MapViewController.m */,
+				DD31153B15936281000DE66A /* ListViewController.h */,
+				DD31153C15936281000DE66A /* ListViewController.m */,
+				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
+				DD79FF22158188C2001597D0 /* CLLocation+HeadingFromLocation.h */,
+				DD79FF23158188C2001597D0 /* CLLocation+HeadingFromLocation.m */,
+				DD31153E1593787A000DE66A /* UISlider+BiggerThumb.h */,
+				DD31153F1593787B000DE66A /* UISlider+BiggerThumb.m */,
 				DD34EA1F15894FFC00740B4C /* Picture.h */,
 				DD34EA2015894FFC00740B4C /* Picture.m */,
-				DD0E2C32157EC2B700F3AAF9 /* Supporting Files */,
+				DD3115361593509B000DE66A /* MapAnnotation.h */,
+				DD3115371593509B000DE66A /* MapAnnotation.m */,
 			);
 			path = "ar-project";
 			sourceTree = "<group>";
@@ -237,6 +266,10 @@
 				DD0E2C61157EC50900F3AAF9 /* tab_list@2x.png in Resources */,
 				DD0E2C6F157ECBB200F3AAF9 /* brooks_hall_1936.jpg in Resources */,
 				DDAC61971587BB2300D2E484 /* data.plist in Resources */,
+				DD311512158FB807000DE66A /* icon.png in Resources */,
+				DD311515158FB809000DE66A /* icon@2x.png in Resources */,
+				DD311517158FB93F000DE66A /* appicon(ipadlowres).png in Resources */,
+				DD311519158FB941000DE66A /* appicon(ipadhighres).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +286,9 @@
 				DD79FF24158188C2001597D0 /* CLLocation+HeadingFromLocation.m in Sources */,
 				DDAC619B1587C02600D2E484 /* MapViewController.m in Sources */,
 				DD34EA2115894FFC00740B4C /* Picture.m in Sources */,
+				DD3115381593509B000DE66A /* MapAnnotation.m in Sources */,
+				DD31153D15936281000DE66A /* ListViewController.m in Sources */,
+				DD3115401593787B000DE66A /* UISlider+BiggerThumb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

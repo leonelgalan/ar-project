@@ -24,5 +24,16 @@
 		<key>latitude</key>
 		<real>35.78612</real>
 	</dict>
+	<key>3</key>
+	<dict>
+		<key>title</key>
+		<string>Durham Bulls</string>
+		<key>description</key>
+		<string>Durham Bulls</string>
+		<key>longitude</key>
+		<real>-78.90482</real>
+		<key>latitude</key>
+		<real>35.99158</real>
+	</dict>
 </dict>
 </plist>

@@ -149,9 +149,12 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.userLocation = newLocation;
+    
     location = newLocation;
     //Override Location to: 35.78528, -78.66330 (Pullen Rd.)
-    location = [[CLLocation alloc] initWithLatitude:35.78528 longitude:-78.66330];
+    //location = [[CLLocation alloc] initWithLatitude:35.78528 longitude:-78.66330];
     [self redraw];
 }
 
@@ -183,8 +186,16 @@
     float angle = 34.1;
     float zero = heading.trueHeading - angle / 2;
     if (zero < bearing && bearing < (zero + angle)) {
-        float x = round(((bearing - zero) * 768 / angle) -  768 / 2);
-        _imageView.frame = CGRectMake(x, _imageView.frame.origin.y, _imageView.frame.size.width, _imageView.frame.size.height);
+        float x = round(((bearing - zero) * 1368 / angle) -  1368 / 2);
+        _imageView.frame = CGRectMake(x - 300, _imageView.frame.origin.y, _imageView.frame.size.width, _imageView.frame.size.height);
+//        [UIView animateWithDuration:0.3f
+//                              delay:0.0f
+//                            options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse
+//                         animations:^{
+//                             _imageView.frame = CGRectMake(x - 300, _imageView.frame.origin.y, _imageView.frame.size.width, _imageView.frame.size.height);
+//                         }
+//                         completion:nil];
+
     } else {
         float x = 1024;
         _imageView.frame = CGRectMake(x, _imageView.frame.origin.y, _imageView.frame.size.width, _imageView.frame.size.height);

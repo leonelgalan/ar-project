@@ -12,9 +12,13 @@
 #import "AppDelegate.h"
 
 @interface Picture : NSObject {
+    NSString *title;
+    NSString *description;
     CLLocation *location;
 }
 
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) CLLocation *location;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;

@@ -12,6 +12,7 @@
 
 @synthesize window = _window;
 @synthesize data = _data;
+@synthesize userLocation = _userLocation;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

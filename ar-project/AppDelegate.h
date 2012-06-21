@@ -12,9 +12,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     NSDictionary *data;
+    CLLocation *userLocation;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSDictionary *data;
+@property (strong, nonatomic) CLLocation *userLocation;
 
 @end
