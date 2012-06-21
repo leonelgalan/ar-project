@@ -20,7 +20,7 @@
 @synthesize slider = _slider;
 @synthesize location = _location;
 @synthesize heading = _heading;
-
+@synthesize slideMenu = _slideMenu;
 @synthesize headingLabel = _headingLabel;
 @synthesize coordinatesLabel = _coordinatesLabel;
 @synthesize point0 = _point0;
@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self initLocationServices];
     [self initCamera];
     [self initRadar];
@@ -36,9 +35,9 @@
 
 - (void)initCamera {
     captureSession = [[AVCaptureSession alloc] init];
-	
+
 	AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-	if (videoDevice) { 
+	if (videoDevice) {
 		NSError *error;
 		AVCaptureDeviceInput *videoIn = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
 		if (!error) {
@@ -53,20 +52,25 @@
 	} else {
 		NSLog(@"Couldn't create video capture device");
 	}
-	
+
 	[captureSession startRunning];
-	
+
 	AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
 	previewLayer.frame = _cameraView.bounds;
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 	[[_cameraView layer] addSublayer:previewLayer];
-    
+
     // Vertical Slider, rotates in the center
     _slider.transform = CGAffineTransformRotate(_slider.transform, 270.0/180*M_PI);
 }
 
 -(IBAction) sliderChanged:(id)sender {
     [_imageView setAlpha:_slider.value];
+}
+
+-(void)touchMenu
+{
+    NSLog(@"touched");
 }
 
 -(IBAction) captureView:(id)sender {
@@ -119,6 +123,25 @@
     UIGraphicsEndImageContext();
     
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    
+
+        
+        NSData* imageData = UIImageJPEGRepresentation(image, 90);
+        Facebook* fb = [(AppDelegate *)[[UIApplication sharedApplication] delegate] facebook   ];
+        
+        NSMutableDictionary * params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[fb accessToken],@"access_token",
+                                        @"OMG!", @"LOOK!",
+                                        imageData, @"source",
+                                        nil];
+        [fb requestWithGraphPath:@"me" 
+                       andParams:params 
+                   andHttpMethod:@"POST" 
+                     andDelegate:self];
+    
+    
+        
+        
+
 }
 
 - (void) image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {

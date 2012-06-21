@@ -18,7 +18,7 @@
     if (self = [super init]) {
         _title = [dictionary objectForKey:@"title"];
         _description= [dictionary objectForKey:@"description"];
-        _location = [[CLLocation alloc] 
+        _location = [[CLLocation alloc]
                             initWithLatitude:[((NSNumber *)[dictionary objectForKey:@"latitude"]) doubleValue]
                             longitude:[((NSNumber *)[dictionary objectForKey:@"longitude"]) doubleValue]];
     }
