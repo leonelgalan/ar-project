@@ -21,10 +21,11 @@
 @synthesize location = _location;
 @synthesize heading = _heading;
 @synthesize slideMenu = _slideMenu;
-
+@synthesize facebookShare = _facebookShare;
 @synthesize headingLabel = _headingLabel;
 @synthesize coordinatesLabel = _coordinatesLabel;
 @synthesize point0 = _point0;
+@synthesize sharedPicture = _sharedPicture;
 
 - (void)viewDidLoad
 {  
@@ -35,8 +36,6 @@
 }
 
                                             
-                                        
-
 - (void)initCamera {
     captureSession = [[AVCaptureSession alloc] init];
 	
@@ -73,12 +72,6 @@
 }
 
 
-
--(void)touchMenu
-{
-    NSLog(@"touched");
-}
-
 -(IBAction) captureView:(id)sender {
     // http://developer.apple.com/library/ios/#qa/qa1703/_index.html
     // Create a graphics context with the target size
@@ -90,7 +83,7 @@
     
     // camera image size extended to screen ratio so it captures the entire screen
     //
-    CGSize imageSize = CGSizeMake( (CGFloat)480.0, (CGFloat)720.0 );
+    CGSize imageSize = CGSizeMake( (CGFloat)self.view.frame.size.height, (CGFloat)self.view.frame.size.width);
     
     if (NULL != UIGraphicsBeginImageContextWithOptions)
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
@@ -98,56 +91,67 @@
         UIGraphicsBeginImageContext(imageSize);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // Start with the view...
-    //
+    /////////
+    // -renderInContext: renders in the coordinate space of the layer,
+    // so we must first apply the layer's geometry to the graphics context
     CGContextSaveGState(context);
-    CGContextTranslateCTM(context, [self.view center].x, [self.view center].y);
+    // Center the context around the window's anchor point
+    CGContextTranslateCTM(context, [_cameraView center].x, [_cameraView center].y);
+    // Apply the window's transform about the anchor point
     CGContextConcatCTM(context, [self.view transform]);
-    CGContextTranslateCTM(context,-[self.view bounds].size.width * [[self.view layer] anchorPoint].x,-[self.view bounds].size.height * [[self.view layer] anchorPoint].y);
-    [[self.view layer] renderInContext:context];
+    // Offset by the portion of the bounds left of and above the anchor point
+    CGContextTranslateCTM(context,
+                          -[_cameraView bounds].size.width * [[_cameraView layer] anchorPoint].x,
+                          -[_cameraView bounds].size.height * [[_cameraView layer] anchorPoint].y);
+    
+    // Render the layer hierarchy to the current context
+    [[_cameraView layer] renderInContext:context];
+    
+    // Restore the context
     CGContextRestoreGState(context);
     
-    // ...then repeat for every subview from back to front
-    //
-    for (UIView *subView in [self.view subviews])
-    {
-        if ( [subView respondsToSelector:@selector(screen)] )
-            if ( [(UIWindow *)subView screen] == [UIScreen mainScreen] )
-                continue;
-        
-        CGContextSaveGState(context);
-        CGContextTranslateCTM(context, [subView center].x, [subView center].y);
-        CGContextConcatCTM(context, [subView transform]);
-        CGContextTranslateCTM(context,-[subView bounds].size.width * [[subView layer] anchorPoint].x,-[subView bounds].size.height * [[subView layer] anchorPoint].y);
-        [[subView layer] renderInContext:context];
-        CGContextRestoreGState(context);
-    }
     
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();   // autoreleased image
+    /////////
+    _sharedPicture = UIGraphicsGetImageFromCurrentImageContext();
     
-    UIGraphicsEndImageContext();
-    
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    
+    [self showMessage];
 
-        
-        NSData* imageData = UIImageJPEGRepresentation(image, 90);
-        Facebook* fb = [(AppDelegate *)[[UIApplication sharedApplication] delegate] facebook   ];
-        
-        NSMutableDictionary * params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[fb accessToken],@"access_token",
-                                        @"OMG!", @"LOOK!",
-                                        imageData, @"source",
-                                        nil];
-        [fb requestWithGraphPath:@"me" 
-                       andParams:params 
-                   andHttpMethod:@"POST" 
-                     andDelegate:self];
+}
+- (void)showMessage{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Share!"
+                            message:@"Share image on Facebook?"
+                            delegate:self
+                            cancelButtonTitle:nil
+                            otherButtonTitles:nil];
     
-    
-        
-        
+    [message addButtonWithTitle:@"No"];
+    [message addButtonWithTitle:@"Yes"];
+    [message show];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    [title isEqualToString:@"Yes"]? [self sharePictures] : NSLog(@"No, not sharing.");
+}
+
+-(void)sharePictures
+{
+    
+        NSLog(@"sharing pictures whaaaat");
+    NSData* imageData = UIImageJPEGRepresentation(_sharedPicture, 90);
+    Facebook* fb = [(AppDelegate *)[[UIApplication sharedApplication] delegate] facebook   ];
+    
+    NSMutableDictionary * params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[fb accessToken],@"access_token",
+                                    @"message", @"text",
+                                    imageData, @"source",
+                                    nil];
+    [fb requestWithGraphPath:@"me/photos" 
+                   andParams:params 
+               andHttpMethod:@"POST" 
+                 andDelegate:fb.self];
+    
+    
 }
 
 - (void) image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {

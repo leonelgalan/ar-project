@@ -16,7 +16,7 @@
 
 
 
-@interface ARViewController : UIViewController <CLLocationManagerDelegate>
+@interface ARViewController : UIViewController <CLLocationManagerDelegate, UIAlertViewDelegate>
 {
     AVCaptureSession *captureSession;
     UIView *cameraView;
@@ -26,6 +26,7 @@
     UIImageView *imageView;
     UISlider *slider;
     SlideMenu* slideMenu;
+    UIAlertView* facebookShare;
     
     CLLocationManager *locationManager;
     CLLocation *location;
@@ -44,8 +45,11 @@
 @property (nonatomic, retain) IBOutlet UISlider *slider;
 @property (nonatomic, retain) IBOutlet SlideMenu *slideMenu;
 
+
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) CLHeading *heading;
+@property (nonatomic, retain) UIAlertView* facebookShare;
+@property (nonatomic, retain) UIImage* sharedPicture;
 
 // Temporary
 @property (nonatomic, retain) IBOutlet UILabel *headingLabel;
@@ -54,8 +58,9 @@
 
 -(IBAction) sliderChanged:(id)sender;
 -(IBAction) captureView:(id)sender;
+-(void)showMessage; //shows facebook dialog
 
 - (void)initCamera;
--(void)touchMenu;
+-(void)sharePictures;
 
 @end

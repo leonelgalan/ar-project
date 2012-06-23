@@ -192,7 +192,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
                             <view alpha="0.50000000000000011" contentMode="scaleToFill" id="EIH-rv-MDx">
@@ -253,7 +253,6 @@
                         <outlet property="cameraView" destination="ITU-CJ-xQc" id="d97-rQ-kXd"/>
                         <outlet property="coordinatesLabel" destination="yQd-Mi-c8C" id="clm-Zf-hpA"/>
                         <outlet property="headingLabel" destination="agh-b4-2Tu" id="pC3-IZ-xs6"/>
-                        <outlet property="imageView" destination="MQg-Rn-Cqq" id="FOd-f2-IkR"/>
                         <outlet property="point0" destination="BdN-b4-5yC" id="VhK-Uw-nV2"/>
                         <outlet property="radarView" destination="EIH-rv-MDx" id="hIQ-JP-fmj"/>
                         <outlet property="slideMenu" destination="9d9-30-0rm" id="coW-LO-vbv"/>
