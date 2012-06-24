@@ -83,7 +83,7 @@
     
     // camera image size extended to screen ratio so it captures the entire screen
     //
-    CGSize imageSize = CGSizeMake( (CGFloat)self.view.frame.size.height, (CGFloat)self.view.frame.size.width);
+    CGSize imageSize = CGSizeMake( (CGFloat)self.view.frame.size.width, (CGFloat)self.view.frame.size.height);
     
     if (NULL != UIGraphicsBeginImageContextWithOptions)
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);

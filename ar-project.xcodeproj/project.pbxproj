@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE6DACA5158CE7AC0030158A /* SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6DACA4158CE7AC0030158A /* SlideMenu.m */; };
+		CE7135CC1597325000ED347E /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7135CB1597325000ED347E /* arrow.png */; };
 		CEA725561596771E0003BA66 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEA725491596771E0003BA66 /* FBDialog.bundle */; };
 		CEA725571596771E0003BA66 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7254F1596771E0003BA66 /* libfacebook_ios_sdk.a */; };
 		CEB9DCB115966D6400E78490 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB9DCAF15966D6400E78490 /* MainStoryboard_iPad.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		CE6DACA3158CE7AC0030158A /* SlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenu.h; sourceTree = "<group>"; };
 		CE6DACA4158CE7AC0030158A /* SlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenu.m; sourceTree = "<group>"; };
+		CE7135CB1597325000ED347E /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		CEA725471596771E0003BA66 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		CEA725481596771E0003BA66 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
 		CEA725491596771E0003BA66 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0E2C56157EC50900F3AAF9 /* tab_ar@2x.png */,
+				CE7135CB1597325000ED347E /* arrow.png */,
 				DD0E2C57157EC50900F3AAF9 /* tab_list.png */,
 				DD0E2C58157EC50900F3AAF9 /* tab_map.png */,
 				DD0E2C59157EC50900F3AAF9 /* tab_ar.png */,
@@ -285,6 +288,7 @@
 				CEB9DCB915966DB900E78490 /* brooks_hall_1936.jpg in Resources */,
 				CEB9DCBB15966DDF00E78490 /* data.plist in Resources */,
 				CEA725561596771E0003BA66 /* FBDialog.bundle in Resources */,
+				CE7135CC1597325000ED347E /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
