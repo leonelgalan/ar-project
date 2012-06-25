@@ -39,6 +39,8 @@
     
 }
 
+
+@property (nonatomic, retain) AVCaptureSession* captureSession;
 @property (nonatomic, retain) IBOutlet UIView *cameraView;
 @property (nonatomic, retain) IBOutlet UIView *radarView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
@@ -55,12 +57,20 @@
 @property (nonatomic, retain) IBOutlet UILabel *headingLabel;
 @property (nonatomic, retain) IBOutlet UILabel *coordinatesLabel;
 @property (nonatomic, retain) IBOutlet UIView *point0;
+@property (nonatomic, retain) AVCaptureStillImageOutput *stillImageOutput;
+
+
+
+
 
 -(IBAction) sliderChanged:(id)sender;
--(IBAction) captureView:(id)sender;
+- (IBAction)captureView:(id)sender;
 -(void)showMessage; //shows facebook dialog
 
 - (void)initCamera;
 -(void)sharePictures;
+
+- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer ;
+
 
 @end

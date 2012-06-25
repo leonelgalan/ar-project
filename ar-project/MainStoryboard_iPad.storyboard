@@ -120,7 +120,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" id="7qi-Cz-arD">
@@ -233,7 +233,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="captureView:" destination="dCJ-wZ-CwT" eventType="touchUpInside" id="9MK-yD-RIO"/>
+                                    <action selector="captureView:" destination="dCJ-wZ-CwT" eventType="touchUpInside" id="p88-4u-Mdt"/>
                                 </connections>
                             </button>
                         </subviews>

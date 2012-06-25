@@ -7,6 +7,8 @@
 //
 
 #import "ARViewController.h"
+#import <ImageIO/ImageIO.h>
+
 
 @interface ARViewController ()
 
@@ -26,6 +28,8 @@
 @synthesize coordinatesLabel = _coordinatesLabel;
 @synthesize point0 = _point0;
 @synthesize sharedPicture = _sharedPicture;
+@synthesize stillImageOutput = _stillImageOutput;
+@synthesize captureSession = _captureSession;
 
 - (void)viewDidLoad
 {  
@@ -57,6 +61,13 @@
 	}
 	
 	[captureSession startRunning];
+    
+    _stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    [_stillImageOutput setOutputSettings:outputSettings];
+    
+    [captureSession addOutput:_stillImageOutput];
+
 	
 	AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
 	previewLayer.frame = _cameraView.bounds;
@@ -71,52 +82,43 @@
     [_imageView setAlpha:_slider.value];
 }
 
-
--(IBAction) captureView:(id)sender {
-    // http://developer.apple.com/library/ios/#qa/qa1703/_index.html
-    // Create a graphics context with the target size
-    // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
-    // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
-    // Create a graphics context with the target size
-    // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
-    // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
+-(IBAction)captureView:(id)sender
+{
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in _stillImageOutput.connections){
+        for (AVCaptureInputPort *port in [connection inputPorts]){
+            
+            if ([[port mediaType] isEqual:AVMediaTypeVideo]){
+                
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) { 
+            break; 
+        }
+    }
     
-    // camera image size extended to screen ratio so it captures the entire screen
-    //
-    CGSize imageSize = CGSizeMake( (CGFloat)self.view.frame.size.width, (CGFloat)self.view.frame.size.height);
-    
-    if (NULL != UIGraphicsBeginImageContextWithOptions)
-        UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    else
-        UIGraphicsBeginImageContext(imageSize);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    /////////
-    // -renderInContext: renders in the coordinate space of the layer,
-    // so we must first apply the layer's geometry to the graphics context
-    CGContextSaveGState(context);
-    // Center the context around the window's anchor point
-    CGContextTranslateCTM(context, [_cameraView center].x, [_cameraView center].y);
-    // Apply the window's transform about the anchor point
-    CGContextConcatCTM(context, [self.view transform]);
-    // Offset by the portion of the bounds left of and above the anchor point
-    CGContextTranslateCTM(context,
-                          -[_cameraView bounds].size.width * [[_cameraView layer] anchorPoint].x,
-                          -[_cameraView bounds].size.height * [[_cameraView layer] anchorPoint].y);
-    
-    // Render the layer hierarchy to the current context
-    [[_cameraView layer] renderInContext:context];
-    
-    // Restore the context
-    CGContextRestoreGState(context);
-    
-    
-    /////////
-    _sharedPicture = UIGraphicsGetImageFromCurrentImageContext();
-    
+    NSLog(@"about to request a capture from: %@", _stillImageOutput);
+    [_stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler: ^(CMSampleBufferRef imageSampleBuffer, NSError *error){
+        
+        CFDictionaryRef exifAttachments = CMGetAttachment( imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+        if (exifAttachments){
+            
+            // Do something with the attachments if you want to. 
+            NSLog(@"attachements: %@", exifAttachments);
+        }
+        else
+            NSLog(@"no attachments");
+        
+        NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        
+        _sharedPicture = image;
+    }];
     [self showMessage];
-
 }
+
 - (void)showMessage{
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Share!"
                             message:@"Share image on Facebook?"
