@@ -37,8 +37,6 @@
     [self initLocationServices];
     [self initCamera];
     [self initRadar];
-    
-    self.navigationController.tabBarController
 }
 
 - (void)initCamera {
