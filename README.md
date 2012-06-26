@@ -7,6 +7,8 @@ Retrospective is an augmented reality app for iOS (iPad and iPhone). It was deve
 
 ## [Video @ Vimeo](http://vimeo.com/44747132)
 
+## [Video @ Youtube](http://youtu.be/_ldykSTu7kg)
+
 ## Elevator Pitch
 Retrospective gives you a window to the past. Match the photographer’s position and see exactly what the camera captured years ago. Overlay the original picture with the current view to explore the past in a unique way. Share time travel through photography on Facebook and Twitter.
 
@@ -19,7 +21,11 @@ Retrospective gives you a window to the past. Match the photographer’s positio
 *	Capture both photographer's position and object's position for each picture.
 *	Implement Twitter sharing and polish Facebook integration.
 
-## Diffulties
+## Difficulties
+*	Unable to record screen (video shows a mockup instead)
+	*	Simulator doesn't have: camera, compass
+	*	Outdoor screen was impossible to record
+*	Running the app on a device requires an Apple Developer account
 
 ## Ideation and Development
 
