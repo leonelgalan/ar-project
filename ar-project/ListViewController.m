@@ -20,7 +20,7 @@
     
     NSLog(@"viewDidLoad");
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     nearby = [[NSMutableArray alloc] initWithCapacity:[[appDelegate.data allValues] count]];
     rest = [[NSMutableArray alloc] initWithCapacity:[[appDelegate.data allValues] count]];
 

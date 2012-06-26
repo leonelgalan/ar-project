@@ -37,7 +37,7 @@
                             context:NULL];
     
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     for (NSDictionary *dictionary in [appDelegate.data allValues]) {
         Picture *picture = [[Picture alloc] initWithDictionary:dictionary];
         MapAnnotation *addAnnotation = [[MapAnnotation alloc] initWithCoordinate:picture.location.coordinate];
@@ -51,7 +51,7 @@
 
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.userLocation = _mapView.userLocation.location;
     // Durham 35.99265, -78.90518
     // NC State 35.78461, -78.66448

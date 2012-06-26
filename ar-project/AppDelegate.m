@@ -38,6 +38,7 @@
 
 
     _data = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"]];
+    
     return YES;
 }
     // Pre iOS 4.2 support
@@ -54,6 +55,23 @@
     [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
+}
+
+- (void)fbDidNotLogin:(BOOL)cancelled {
+    //TODO
+}
+
+- (void)fbDidLogout {
+    //TODO
+}
+
+- (void)fbDidExtendToken:(NSString*)accessToken
+expiresAt:(NSDate*)expiresAt {
+    //TODO
+}
+
+- (void)fbSessionInvalidated{
+    //TODO
 }
 @end
 

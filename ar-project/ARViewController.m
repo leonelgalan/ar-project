@@ -37,6 +37,8 @@
     [self initLocationServices];
     [self initCamera];
     [self initRadar];
+    
+    self.navigationController.tabBarController
 }
 
 - (void)initCamera {
@@ -181,7 +183,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.userLocation = newLocation;
     
     location = newLocation;
@@ -248,7 +250,7 @@
 
 #pragma Radar
 - (void)initRadar {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     pictures = [[NSMutableArray alloc] initWithCapacity:[[appDelegate.data allValues] count]];
     radarViews = [[NSMutableArray alloc] initWithCapacity:[[appDelegate.data allValues] count]];
