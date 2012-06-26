@@ -3,13 +3,23 @@
 
 Retrospective is an augmented reality app for iOS (iPad and iPhone). It was developed in the Summer 2012 for [Visual Interfaces for Mobiles @ NCSU (CSC 495/591 & ADN 492/592)](http://mobiclass.csc.ncsu.edu/)
 
-## [Post @ Blog	]
+## [Post @ Blog](http://mobiclass.csc.ncsu.edu/2012/06/project-retrospective.html)
 
 ## [Video @ Vimeo](http://vimeo.com/44747132)
 
 ## Elevator Pitch
 Retrospective gives you a window to the past. Match the photographer’s position and see exactly what the camera captured years ago. Overlay the original picture with the current view to explore the past in a unique way. Share time travel through photography on Facebook and Twitter.
 
+## Future
+
+*	Web server for serving new pictures
+*	Facelift
+*	Smooth overlay movement
+*	Crowd-source positioning: On user demand, disabled Location/Heading movement and allow user to center picture manually. Capture user location, heading to improve data.
+*	Capture both photographer's position and object's position for each picture.
+*	Implement Twitter sharing and polish Facebook integration.
+
+## Diffulties
 
 ## Ideation and Development
 
