@@ -7,6 +7,8 @@
 //
 
 #import "ARViewController.h"
+#import <ImageIO/ImageIO.h>
+
 
 @interface ARViewController ()
 
@@ -21,9 +23,13 @@
 @synthesize location = _location;
 @synthesize heading = _heading;
 @synthesize slideMenu = _slideMenu;
+@synthesize facebookShare = _facebookShare;
 @synthesize headingLabel = _headingLabel;
 @synthesize coordinatesLabel = _coordinatesLabel;
 @synthesize point0 = _point0;
+@synthesize sharedPicture = _sharedPicture;
+@synthesize stillImageOutput = _stillImageOutput;
+@synthesize captureSession = _captureSession;
 
 - (void)viewDidLoad
 {
@@ -55,6 +61,11 @@
 
 	[captureSession startRunning];
 
+    _stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    [_stillImageOutput setOutputSettings:outputSettings];
+    [captureSession addOutput:_stillImageOutput];
+
 	AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
 	previewLayer.frame = _cameraView.bounds;
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -68,80 +79,78 @@
     [_imageView setAlpha:_slider.value];
 }
 
--(void)touchMenu
+-(IBAction)captureView:(id)sender
 {
-    NSLog(@"touched");
-}
-
--(IBAction) captureView:(id)sender {
-    // http://developer.apple.com/library/ios/#qa/qa1703/_index.html
-    // Create a graphics context with the target size
-    // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
-    // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
-    // Create a graphics context with the target size
-    // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
-    // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
-    
-    // camera image size extended to screen ratio so it captures the entire screen
-    //
-    CGSize imageSize = CGSizeMake( (CGFloat)480.0, (CGFloat)720.0 );
-    
-    if (NULL != UIGraphicsBeginImageContextWithOptions)
-        UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    else
-        UIGraphicsBeginImageContext(imageSize);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // Start with the view...
-    //
-    CGContextSaveGState(context);
-    CGContextTranslateCTM(context, [self.view center].x, [self.view center].y);
-    CGContextConcatCTM(context, [self.view transform]);
-    CGContextTranslateCTM(context,-[self.view bounds].size.width * [[self.view layer] anchorPoint].x,-[self.view bounds].size.height * [[self.view layer] anchorPoint].y);
-    [[self.view layer] renderInContext:context];
-    CGContextRestoreGState(context);
-    
-    // ...then repeat for every subview from back to front
-    //
-    for (UIView *subView in [self.view subviews])
-    {
-        if ( [subView respondsToSelector:@selector(screen)] )
-            if ( [(UIWindow *)subView screen] == [UIScreen mainScreen] )
-                continue;
-        
-        CGContextSaveGState(context);
-        CGContextTranslateCTM(context, [subView center].x, [subView center].y);
-        CGContextConcatCTM(context, [subView transform]);
-        CGContextTranslateCTM(context,-[subView bounds].size.width * [[subView layer] anchorPoint].x,-[subView bounds].size.height * [[subView layer] anchorPoint].y);
-        [[subView layer] renderInContext:context];
-        CGContextRestoreGState(context);
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in _stillImageOutput.connections){
+        for (AVCaptureInputPort *port in [connection inputPorts]){
+            
+            if ([[port mediaType] isEqual:AVMediaTypeVideo]){
+                
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) { 
+            break; 
+        }
     }
     
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();   // autoreleased image
-    
-    UIGraphicsEndImageContext();
-    
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    
+    NSLog(@"about to request a capture from: %@", _stillImageOutput);
+    [_stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler: ^(CMSampleBufferRef imageSampleBuffer, NSError *error){
+        
+        CFDictionaryRef exifAttachments = CMGetAttachment( imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+        if (exifAttachments){
+            
+            // Do something with the attachments if you want to. 
+            NSLog(@"attachements: %@", exifAttachments);
+        }
+        else
+            NSLog(@"no attachments");
+        
+        NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        
+        _sharedPicture = image;
+    }];
+    [self showMessage];
+}
 
-        
-        NSData* imageData = UIImageJPEGRepresentation(image, 90);
-        Facebook* fb = [(AppDelegate *)[[UIApplication sharedApplication] delegate] facebook   ];
-        
-        NSMutableDictionary * params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[fb accessToken],@"access_token",
-                                        @"OMG!", @"LOOK!",
-                                        imageData, @"source",
-                                        nil];
-        [fb requestWithGraphPath:@"me" 
-                       andParams:params 
-                   andHttpMethod:@"POST" 
-                     andDelegate:self];
+- (void)showMessage{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Share!"
+                            message:@"Share image on Facebook?"
+                            delegate:self
+                            cancelButtonTitle:nil
+                            otherButtonTitles:nil];
     
-    
-        
-        
+    [message addButtonWithTitle:@"No"];
+    [message addButtonWithTitle:@"Yes"];
+    [message show];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    [title isEqualToString:@"Yes"]? [self sharePictures] : NSLog(@"No, not sharing.");
+}
+
+-(void)sharePictures
+{
+    
+        NSLog(@"sharing pictures whaaaat");
+    NSData* imageData = UIImageJPEGRepresentation(_sharedPicture, 90);
+    Facebook* fb = [(AppDelegate *)[[UIApplication sharedApplication] delegate] facebook   ];
+    
+    NSMutableDictionary * params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[fb accessToken],@"access_token",
+                                    @"message", @"text",
+                                    imageData, @"source",
+                                    nil];
+    [fb requestWithGraphPath:@"me/photos" 
+                   andParams:params 
+               andHttpMethod:@"POST" 
+                 andDelegate:fb.self];
+    
+    
 }
 
 - (void) image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {

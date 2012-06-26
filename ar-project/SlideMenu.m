@@ -17,6 +17,7 @@
 @synthesize swipeLeft = _swipeLeft;
 @synthesize swipeRight = _swipeRight;
 @synthesize tapMenu = _tapMenu;
+@synthesize arrow = _arrow;
 
 -(void)viewDidLoad
 {
@@ -65,14 +66,8 @@
         return;
     }
     
-    /*
-    if (((touch.view == mapNav) && (sender == _tapMenu)) || ((touch.view == mapNav) && (sender == _tapMenu)))
-    {
-        //chagneviews
-    }
-     */
    
-    // get the height of the search bar
+    // get the height of the menu
     float delta = self.frame.size.width;
     
     if(sender == _swipeRight && isOpen == NO)
@@ -97,12 +92,21 @@
     [self animate:delta];
 
     }
-    }
+}
 
 -(void)animate:(CGFloat)delta
 {
-    // run animation with duration of 0.7 second and no delay
-    [UIView animateWithDuration:0.7 delay: 0.0 options: UIViewAnimationOptionCurveEaseIn animations:^{
+    if(delta > 0){
+    _arrow.image = [UIImage imageWithCGImage:_arrow.image.CGImage 
+                                                scale:1.0 orientation: UIImageOrientationUpMirrored];
+    }
+    else {
+        _arrow.image = [UIImage imageWithCGImage:_arrow.image.CGImage 
+                                           scale:1.0 orientation: UIImageOrientationUp];
+    }
+    
+    
+    [UIView animateWithDuration:0.3 delay: 0.0 options: UIViewAnimationOptionCurveEaseIn animations:^{
         self.frame = CGRectOffset(self.frame, delta/5, 0.0); self.menuView.frame = CGRectOffset(self.menuView.frame, delta/2.5, 0.0);
     }
                      completion:^(BOOL finished){
@@ -116,7 +120,9 @@
                      }];
 
 }
-                         
+     
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -125,5 +131,7 @@
     // Drawing code
 }
 */
+
+
 
 @end

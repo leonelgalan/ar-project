@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Twitter/Twitter.h>
 #import "FBConnect.h"
 
 #import "CLLocation+HeadingFromLocation.h"

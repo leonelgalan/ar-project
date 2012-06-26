@@ -17,6 +17,7 @@ Easy navigation for the AR view, slide out at thumb level
 {
     UIButton* listNav;
     UIButton* mapNav;
+    UIImageView* arrow;
     BOOL isOpen;
 
 }
@@ -27,6 +28,8 @@ Easy navigation for the AR view, slide out at thumb level
 @property (nonatomic, retain) IBOutlet UISwipeGestureRecognizer* swipeRight;
 @property (nonatomic, retain) IBOutlet UISwipeGestureRecognizer* swipeLeft;
 @property (nonatomic, retain) IBOutlet UITapGestureRecognizer* tapMenu;
+@property (nonatomic, retain) IBOutlet UIImageView* arrow;
+
 
 
 
