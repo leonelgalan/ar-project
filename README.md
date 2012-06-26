@@ -1,7 +1,9 @@
 # Retrospective
 >	A window to the past
 
-Retrospective is an augmented reality app for iOS (iPad and iPhone). It was developed in the Summer 2012 for [Visual Interfaces for Mobiles @ NCSU (CSC 495/591 & ADN 492/592)](http://mobiclass.csc.ncsu.edu/)
+![Retrospective icon](https://github.com/NCSUMobiles/Summer12-LookingBack/raw/master/docs/images/appicon\(iphonehighres2\).png)
+
+Retrospective is an augmented reality app for iOS (iPad and iPhone). It was developed in the Summer of 2012 for [Visual Interfaces for Mobiles @ NCSU (CSC 495/591 & ADN 492/592)](http://mobiclass.csc.ncsu.edu/)
 
 ## [Post @ Blog](http://mobiclass.csc.ncsu.edu/2012/06/project-retrospective.html)
 
@@ -45,11 +47,11 @@ Retrospective gives you a window to the past. Match the photographer’s positio
 *	Time Machine
 *	Remember This
 
+**BOLD items where selected and used at some point during development**
+
 ### Original Elevator Pitch
 
 >	PICTURE THIS for the iOS let's you see Raleigh as it once was. Point your phone at a landmark and you will see it as it was in the past, and as it is today. See how the passage of time has changed your city with PICTURE THIS!
-
-**BOLD items where selected and used at some point during development**
 
 ### Tagline Brainstorm
 
