@@ -246,6 +246,7 @@
                         <outlet property="cameraView" destination="ITU-CJ-xQc" id="d97-rQ-kXd"/>
                         <outlet property="coordinatesLabel" destination="yQd-Mi-c8C" id="clm-Zf-hpA"/>
                         <outlet property="headingLabel" destination="agh-b4-2Tu" id="pC3-IZ-xs6"/>
+                        <outlet property="imageView" destination="MQg-Rn-Cqq" id="z0K-L9-4o1"/>
                         <outlet property="point0" destination="BdN-b4-5yC" id="VhK-Uw-nV2"/>
                         <outlet property="radarView" destination="EIH-rv-MDx" id="hIQ-JP-fmj"/>
                         <outlet property="slideMenu" destination="9d9-30-0rm" id="coW-LO-vbv"/>
@@ -279,37 +280,6 @@
         <image name="tab_list.png" width="20" height="14"/>
         <image name="tab_map.png" width="16" height="26"/>
     </resources>
-    <classes>
-        <class className="ARViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ARViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="captureView:"/>
-                <relationship kind="action" name="sliderChanged:"/>
-                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="coordinatesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="headingLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="point0" candidateClass="UIView"/>
-                <relationship kind="outlet" name="radarView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="slideMenu" candidateClass="SlideMenu"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="SlideMenu" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideMenu.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonTouched:"/>
-                <relationship kind="action" name="handleMenu:" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="outlet" name="arrow" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="listNav" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapNav" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="menuView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="swipeLeft" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="swipeRight" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="tapMenu" candidateClass="UITapGestureRecognizer"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
