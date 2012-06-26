@@ -113,7 +113,21 @@
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         
-        _sharedPicture = image;
+        UIImage *overlay = imageView.image;
+        
+        UIGraphicsBeginImageContext(image.size);
+        
+        // Use existing opacity as is
+        [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+        
+        // Apply supplied opacity if applicable
+        [image drawInRect:CGRectMake(0,0,overlay.size.width,overlay.size.height) blendMode:kCGBlendModeNormal alpha:0.8];
+        
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        _sharedPicture = newImage;
     }];
     [self showMessage];
 }
