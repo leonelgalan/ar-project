@@ -31,39 +31,62 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="jPe-jh-ftw"/>
+                        <segue destination="pcF-kb-CoF" kind="relationship" relationship="rootViewController" id="qtk-2j-drt"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="2201" y="14"/>
         </scene>
-        <!--View Controller - Map-->
-        <scene sceneID="11">
+        <!--List View Controller-->
+        <scene sceneID="CIC-js-cLM">
             <objects>
-                <viewController id="2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4Z-Sz-AKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="pcF-kb-CoF" customClass="ListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BqT-CD-srH">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="20">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items/>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="tab_map.png" id="7"/>
-                    <navigationItem key="navigationItem" id="6NN-bn-F65"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="odC-Mk-BQf" detailTextLabel="QWM-A9-HkQ" style="IBUITableViewCellStyleSubtitle" id="qxE-tg-A71">
+                                <rect key="frame" x="0.0" y="54" width="768" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="odC-Mk-BQf">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QWM-A9-HkQ">
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pcF-kb-CoF" id="6HF-uI-aCv"/>
+                            <outlet property="delegate" destination="pcF-kb-CoF" id="eQy-hD-aOd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Koa-tS-cpf"/>
+                </tableViewController>
             </objects>
-            <point key="canvasLocation" x="3221" y="14"/>
+            <point key="canvasLocation" x="3211" y="65"/>
         </scene>
-        <!--View Controller - List-->
+        <!--Map View Controller - Map-->
         <scene sceneID="ICy-1r-oOs">
             <objects>
-                <viewController id="I8H-Mo-yxW" sceneMemberID="viewController">
+                <viewController id="I8H-Mo-yxW" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ve-2E-XJl">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,11 +96,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items/>
                             </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="yhJ-NT-zxK">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="955"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" image="tab_list.png" id="EFv-zb-L9P"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="tab_map.png" id="EFv-zb-L9P"/>
                     <navigationItem key="navigationItem" id="QRm-m3-bTF"/>
+                    <connections>
+                        <outlet property="mapView" destination="yhJ-NT-zxK" id="dDL-ND-Jyr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqc-R2-UkZ" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,7 +175,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonTouched:" destination="9d9-30-0rm" eventType="touchUpInside" id="I8K-wB-EIR"/>
-                                                    <segue destination="2" kind="custom" id="p2w-Yq-Q7p"/>
+                                                    <segue destination="pcF-kb-CoF" kind="custom" id="ZuR-Fd-xip"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u8a-6Y-fTT">
@@ -295,6 +325,15 @@
                 <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
             </relationships>
         </class>
+        <class className="ListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewController.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
         <class className="SlideMenu" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideMenu.h"/>
             <relationships>
@@ -316,6 +355,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="p2w-Yq-Q7p"/>
+        <segue reference="ZuR-Fd-xip"/>
     </inferredMetricsTieBreakers>
 </document>

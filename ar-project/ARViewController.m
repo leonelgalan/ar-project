@@ -186,7 +186,7 @@
     
     location = newLocation;
     //Override Location to: 35.78528, -78.66330 (Pullen Rd.)
-    //location = [[CLLocation alloc] initWithLatitude:35.78528 longitude:-78.66330];
+    location = [[CLLocation alloc] initWithLatitude:35.78528 longitude:-78.66330];
     [self redraw];
 }
 
